@@ -71,7 +71,7 @@ const Products = () => {
       dispatch(addToCart(item));
       Swal.fire({
         icon: "success",
-        title: `${item.title} has been added to your cart.`,
+        title: `${item.title} is added to your cart list.`,
         text: ``,
       });
     } catch (error) {
@@ -85,24 +85,21 @@ const Products = () => {
 
   return (
     <div className="bg-[#EEEDEB]">
-      <div
-        className="h-[200px] bg-cover bg-center bg-gray-400 grayscale"
-        style={{ backgroundImage: `url(${bannerBg})` }}
-      >
-        <div className="h-full w-full flex items-center justify-center bg-black bg-opacity-50">
-          <h1 className="text-white text-5xl">Products</h1>
+     
+        <div className="h-full w-full flex items-center justify-center ">
+          <h1 className="text-[#75ef71] text-5xl mt-5">All Products</h1>
         </div>
-      </div>
+    
 
       <div className="py-20">
         <div className="max-w-screen-xl mx-auto mb-7 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10">
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="outline-none px-7 py-2 md:py-0 rounded-lg bg-[#D6EFD8] border border-[#1A5319]"
+            className="outline-none px-7 py-2 md:py-0 rounded-lg bg-lime-100 border border-[#9ed74d]"
           >
             <option value="" disabled>
-              Sort By
+              Sort By Name and Price
             </option>
             <option value="price">Price</option>
             <option value="name">Name</option>
@@ -111,21 +108,21 @@ const Products = () => {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="outline-none px-7 py-2 md:py-0 rounded-lg bg-[#D6EFD8] border border-[#1A5319]"
+            className="outline-none px-7 py-2 md:py-0 rounded-lg bg-lime-100 border border-[#9ed74d]"
           >
             <option value="" disabled>
-              Filter By
+              Filter By Category
             </option>
+            <option value="Fruit Bearing Trees">Orchard Trees</option>
+            <option value="Flower Trees">Flower Trees</option>
             <option value="Indoor Plants">Indoor Plants</option>
             <option value="Outdoor Trees">Outdoor Trees</option>
-            <option value="Fruit Bearing Trees">Fruit Bearing Trees</option>
-            <option value="Flower Trees">Flower Trees</option>
           </select>
 
           <form onSubmit={(e) => e.preventDefault()}>
             <Input
               color="green"
-              label="Search Product"
+              label="Search Your Product"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               icon={<IoSearchSharp size={"20"} className="font-bold" />}
@@ -138,71 +135,62 @@ const Products = () => {
 
         <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
           {allProducts.data.data.map((item: any, index: number) => (
-            <div
-              key={index}
-              className="rounded-xl bg-[#FCF8F3] p-3 shadow-lg hover:shadow-xl"
-            >
-              <div className="relative flex items-end overflow-hidden rounded-xl">
-                <img
-                  src={item.image}
-                  alt="Hotel Photo"
-                  className="h-[200px] w-full"
-                />
-                <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-yellow-800"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            <div key={index} className="w-full max-w-sm bg-white border3 border-lime-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+              <img className="h-60 rounded-t-lg " src={item.image} alt="product image" />
+            </a>
+            <div className="px-5 pb-5 mt-4">
+              <a href="#">
+                <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{item.title}</h5>
+              </a>
+              <div className="flex items-center mt-2.5 mb-5">
+                <div className="flex items-center space-x-1 rtl:space-x-reverse">
+                  <svg className="w-4 h-4 text-lime-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
                   </svg>
-                  <span className="text-slate-400 ml-1 text-sm font-bold">
-                    {item.rating}
-                  </span>
+                  <svg className="w-4 h-4 text-lime-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                  </svg>
+                  <svg className="w-4 h-4 text-lime-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                  </svg>
+                  <svg className="w-4 h-4 text-lime-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                  </svg>
+                  <svg className="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                  </svg>
                 </div>
+                <span className="bg-blue-100 text-lime-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-blue-800 ms-3">{item.rating}</span>
               </div>
-
-              <div className="mt-1 p-2">
-                <h2 className="text-gray-800 text-lg font-bold">
-                  {item.title}
-                </h2>
-
-                <div className="mt-3 flex items-end justify-between">
-                  <p>
-                    <span className="text-lg font-bold text-[#508D4E]">
-                      ৳ {item.price}
-                    </span>
-                  </p>
-
-                  <button
-                    disabled={
-                      isCheckingLoading && item._id === currentProductId
-                    }
-                    onClick={() => handleAddToCart(item)}
-                    className="text-white flex justify-center items-center gap-3 font-bold rounded-xl bg-[#508D4E] p-2 hover:bg-[#1A5319]"
-                  >
-                    <HiOutlineShoppingBag size={"25"} />
-                    <h1>
-                      {isCheckingLoading && item._id === currentProductId ? (
-                        <div className="flex justify-center items-center gap-4">
-                          Please Wait
-                        </div>
-                      ) : (
-                        "Add to cart"
-                      )}
-                    </h1>
-                  </button>
-                </div>
-
-                <Link
-                  className="mt-5 text-white flex justify-center items-center gap-3 font-bold rounded-xl bg-[#468585] p-2 hover:bg-[#468550]"
-                  to={`/product/details/${item._id}`}
+              <div className="flex items-center justify-between">
+                <span className="text-3xl font-bold text-gray-900 dark:text-white">$ {item.price}</span>
+               
+              </div>
+              <div className="flex justify-between items-center mt-5">
+              <button
+                  disabled={isCheckingLoading && item._id === currentProductId}
+                  onClick={() => handleAddToCart(item)}
+                 className="btn bg-gradient-to-r from-lime-800 to-lime-800 text-white"
                 >
-                  See details
-                </Link>
+                  {isCheckingLoading && item._id === currentProductId ? (
+                    <div className="flex justify-center items-center gap-4">
+                      Please Wait
+                    </div>
+                  ) : (
+                    "Add to cart"
+                  )}
+                </button>
+                <Link
+                className="btn bg-gradient-to-r from-lime-800 to-green-800 text-white"
+                to={`/product/details/${item._id}`}
+              >
+                See details
+              </Link>
               </div>
+             
             </div>
+          </div>
           ))}
         </div>
 
@@ -212,7 +200,8 @@ const Products = () => {
         >
           <Button
             variant="text"
-            className="hidden md:flex lg:flex items-center gap-2 text-lg capitalize"
+           
+            className="hidden md:flex lg:flex items-center gap-2 text-lg capitalize "
             onClick={() => {
               setCurrentPage(currentPage - 1);
               window.scrollTo(0, 200);
@@ -229,7 +218,7 @@ const Products = () => {
           {pages.map((_item, index) => (
             <button
               key={index}
-              className={` px-3 py-1 font-bold text-[12px] md:text-[18px] lg:text-[18px] hover:bg-[#2121211a] rounded-lg ${
+              className={` btn bg-gradient-to-r from-lime-800 to-green-800 text-white px-3 py-1 font-bold text-[12px] md:text-[18px] lg:text-[18px] hover:bg-[#2121211a] rounded-lg ${
                 currentPage === index + 1
                   ? "bg-[#508D4E] text-white rounded-lg hover:!bg-[#1A5319]"
                   : "bg-transparent"

@@ -20,7 +20,7 @@ const Navbar = () => {
 
       <div className="hidden md:hidden lg:flex gap-7 justify-center items-center text-lg font-bold">
         <NavLink className="text-base" to={"/"}>Home</NavLink>
-        <NavLink className="text-base" to={"/products"}>Products</NavLink>
+        <NavLink className="text-base" to={"/products"}>All Products</NavLink>
         <NavLink className="text-base" to={"/management"}>Manage Products</NavLink>
         <NavLink  to={"/cart"}>
           <Badge content={cartCount}>
