@@ -79,97 +79,109 @@ const UpdateModal = ({ open, handleOpen, productToUpdate }: any) => {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <div className="px-10 py-5">
-          <h1 className="text-center text-2xl text-gray-800 font-semibold">
+        <div className="bg-gray-800 p-10 rounded-lg shadow-lg w-full max-w-md">
+          <h1 className="text-white text-2xl text-center font-semibold mb-6">
             Update details of {productToUpdate?.title}
           </h1>
 
-          <form className="mt-5 flex flex-col gap-4" onSubmit={handleSubmit}>
-            <Input
-              name="image"
-              defaultValue={formValues.image}
-              label="Image"
-              onChange={handleChange}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              crossOrigin={undefined}
-            />
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <label className="block text-white mb-1">Image</label>
+              <Input
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+                name="image"
+                defaultValue={formValues.image}
+                onChange={handleChange}
+                placeholder="Enter image URL"
+              />
+            </div>
 
-            <Input
-              name="title"
-              label="Title"
-              defaultValue={formValues.title}
-              onChange={handleChange}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              crossOrigin={undefined}
-            />
+            <div>
+              <label className="block text-white mb-1">Title</label>
+              <Input
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+                name="title"
+                defaultValue={formValues.title}
+                onChange={handleChange}
+                placeholder="Enter product title"
+              />
+            </div>
 
-            <Textarea
-              name="description"
-              label="Description"
-              defaultValue={formValues.description}
-              onChange={handleChange}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-            />
+            <div>
+              <label className="block text-white mb-1">Description</label>
+              <Textarea
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+                name="description"
+                defaultValue={formValues.description}
+                onChange={handleChange}
+                placeholder="Enter product description"
+              />
+            </div>
 
-            <Input
-              name="price"
-              label="Price"
-              type="number"
-              defaultValue={formValues.price}
-              onChange={handleChange}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              crossOrigin={undefined}
-            />
+            <div>
+              <label className="block text-white mb-1">Price</label>
+              <Input
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+                name="price"
+                type="number"
+                defaultValue={formValues.price}
+                onChange={handleChange}
+                placeholder="Enter product price"
+              />
+            </div>
 
-            <select
-              name="category"
-              value={formValues.category}
-              className="outline-none px-7 py-2 rounded-lg border border-gray-700"
-              onChange={handleChange}
-            >
-              <option value="default" disabled>
-                Select a category
-              </option>
-              <option value="Indoor Plants">Indoor Plants</option>
-              <option value="Outdoor Trees">Outdoor Trees</option>
-              <option value="Fruit Bearing Trees">Fruit Bearing Trees</option>
-              <option value="Flower Trees">Flower Trees</option>
-            </select>
+            <div>
+              <label className="block text-white mb-1">Category</label>
+              <select
+                name="category"
+                value={formValues.category}
+                onChange={handleChange}
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+              >
+                <option value="default" disabled>
+                  Select a category
+                </option>
+                <option value="Indoor Plants">Indoor Plants</option>
+                <option value="Outdoor Trees">Outdoor Trees</option>
+                <option value="Fruit Bearing Trees">Fruit Bearing Trees</option>
+                <option value="Flower Trees">Flower Trees</option>
+              </select>
+            </div>
 
-            <Input
-              name="quantity"
-              defaultValue={formValues.quantity}
-              label="Quantity"
-              type="number"
-              onChange={handleChange}
-              onPointerEnterCapture={undefined}
-              onPointerLeaveCapture={undefined}
-              crossOrigin={undefined}
-            />
+            <div>
+              <label className="block text-white mb-1">Quantity</label>
+              <Input
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+                name="quantity"
+                type="number"
+                defaultValue={formValues.quantity}
+                onChange={handleChange}
+                placeholder="Enter product quantity"
+              />
+            </div>
 
-            <select
-              name="rating"
-              value={formValues.rating}
-              className="outline-none px-7 py-2 rounded-lg border border-gray-700"
-              onChange={handleChange}
-            >
-              <option value="default" disabled>
-                Ratings
-              </option>
-              <option value="1">1 Star</option>
-              <option value="2">2 Stars</option>
-              <option value="3">3 Stars</option>
-              <option value="4">4 Stars</option>
-              <option value="5">5 Stars</option>
-            </select>
+            <div>
+              <label className="block text-white mb-1">Rating</label>
+              <select
+                name="rating"
+                value={formValues.rating}
+                onChange={handleChange}
+                className="w-full bg-gray-700 text-white border border-gray-600 rounded"
+              >
+                <option value="default" disabled>
+                  Ratings
+                </option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+              </select>
+            </div>
 
             <Button
               type="submit"
-              className="bg-[#508D4E] capitalize text-lg"
+              className="w-full bg-gradient-to-r from-orange-600 to-orange-300 text-white py-2 rounded mt-4"
               placeholder={undefined}
               onPointerEnterCapture={undefined}
               onPointerLeaveCapture={undefined}

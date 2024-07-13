@@ -1,12 +1,11 @@
-import { Radio } from "@material-tailwind/react";
-import bannerBg from "../../assets/product-page-banner-bg.jpg";
+import paymentImg from '../../assets/card_img.png'
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { usePlaceOrderMutation } from "../../redux/features/addToCart/placeOrder";
 import { ImSpinner9 } from "react-icons/im";
 import { clearCart } from "../../redux/features/addToCart/cartSlice";
-
+import './payment.css'
 const Checkout = () => {
   const cartItems = useAppSelector((state) => state.cart.items);
   const dispatch = useAppDispatch();
@@ -49,7 +48,7 @@ const Checkout = () => {
     if (result.error) {
       Swal.fire({
         title: "Opps..!!",
-        text: "One or more product in your cart may have been stocked out..!!",
+        text: "Some products in your cart may no longer be available",
         icon: "warning",
       });
 
@@ -68,90 +67,128 @@ const Checkout = () => {
   return (
     <div>
       <div
-        className="h-[200px] bg-cover bg-center bg-gray-400 grayscale"
-        style={{ backgroundImage: `url(${bannerBg})` }}
+       
       >
-        <div className="h-full w-full flex items-center justify-center bg-black bg-opacity-50">
-          <h1 className="text-white text-5xl">Checkout</h1>
+        <div className="h-full w-full flex items-center justify-center">
+          <h1 className=" text-5xl text-[#75ef71] mt-5">Checkout</h1>
         </div>
       </div>
 
       <div className="py-20 bg-[#EEEDEB]">
         <div
-          className="w-[80%] md:w-[40%] mx-auto bg-[#D6EFD8] rounded shadow flex flex-col justify-between p-3"
+          className="w-[80%] md:w-[40%] mx-auto bg-orange-100 rounded shadow flex flex-col justify-between p-3"
           id="login"
         >
           <form onSubmit={handlePlaceOrder}>
-            <fieldset className="border-4 border-dotted border-[#508D4E] p-5">
-              <legend className="px-2 italic -mx-2 text-xl text-[#508D4E]">
-                Fill out this checkout form!
-              </legend>
+            <fieldset className="border-4  p-5">
+             
 
-              <label className="font-bold text-lg text-gray-700">Name</label>
-              <input
-                required
-                type="text"
-                className="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-[#508D4E]"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
+              <div className="container">
+                <form action="">
+                  <div className="row">
+                    <div className="col">
+                      <h3 className="title">billing address</h3>
 
-              <label className="font-bold text-lg text-gray-700">Email</label>
-              <input
-                required
-                type="email"
-                className="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-[#508D4E]"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+                      <div className="inputBox">
+                        <span>full name :</span>
+                        <input
+                          type="text"
+                          placeholder="john deo"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                      </div>
+                      <div className="inputBox">
+                        <span>email :</span>
+                        <input
+                          type="email"
+                          placeholder="example@example.com"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                      </div>
+                      <div className="inputBox">
+                        <span>address :</span>
+                        <input
+                          type="text"
+                          placeholder="room - street - locality"
+                          value={address}
+                          onChange={(e) => setAddress(e.target.value)}
+                        />
+                      </div>
+                      <div className="inputBox">
+                        <span>city :</span>
+                        <input type="text" placeholder="mumbai" />
+                      </div>
 
-              <label className="font-bold text-lg text-gray-700">
-                Phone Number
-              </label>
-              <input
-                required
-                type="number"
-                className="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-[#508D4E]"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
+                      <div className="flex">
+                        <div className="inputBox">
+                          <span>state :</span>
+                          <input type="text" placeholder="india" />
+                        </div>
+                        <div className="inputBox">
+                          <span>zip code :</span>
+                          <input type="text" placeholder="123 456" />
+                        </div>
+                      </div>
+                    </div>
 
-              <label className="font-bold text-lg text-gray-700">Address</label>
-              <input
-                required
-                type="text"
-                className="w-full p-2 mb-2 mt-1 outline-none ring-none focus:ring-2 focus:ring-[#508D4E]"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
+                    <div className="col">
+                      <h3 className="title">payment</h3>
 
-              <div className="flex flex-col">
-                <label className="font-bold text-lg text-gray-700">
-                  Payment Option
-                </label>
-                <Radio
-                  checked
-                  name="type"
-                  color="green"
-                  label={`Cash On Delivery (Pay ৳ ${subtotal} on delivery)`}
-                  onPointerEnterCapture={undefined}
-                  onPointerLeaveCapture={undefined}
-                  crossOrigin={undefined}
-                />
+                      <div className="inputBox">
+                        <span>cards accepted :</span>
+                        <img src={paymentImg} alt="" />
+                      </div>
+                      <div className="inputBox">
+                        <span>name on card :</span>
+                        <input
+                          type="text"
+                          placeholder="mr. john deo"
+                          value={name}
+                        />
+                      </div>
+                      <div className="inputBox">
+                        <span>credit card number :</span>
+                        <input
+                          type="number"
+                          placeholder="1111-2222-3333-4444"
+                        />
+                      </div>
+                      <div className="inputBox">
+                        <span>exp month :</span>
+                        <input type="text" placeholder="january" />
+                      </div>
+
+                      <div className="flex">
+                        <div className="inputBox">
+                          <span>exp year :</span>
+                          <input type="number" placeholder="2022" />
+                        </div>
+                        <div className="inputBox">
+                          <span>CVV :</span>
+                          <input type="text" placeholder="1234" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+             
+                </form>
               </div>
 
               <button
                 disabled={isLoading}
                 type="submit"
-                className="w-full rounded mt-4 bg-[#508D4E] text-white p-2 text-center font-bold hover:bg-[#1A5319]"
+                className="w-full rounded  bg-gradient-to-r from-orange-600 to-orange-300 text-white p-2 text-center font-bold hover:bg-[#1A5319]"
               >
                 {isLoading ? (
                   <div className="flex justify-center items-center gap-4">
                     <ImSpinner9 className="animate-spin text-[20px]" />
-                    Placing Order
+                    Placing Your Order
                   </div>
                 ) : (
-                  "Place Order"
+                  "Placing Your Order"
                 )}
               </button>
             </fieldset>
