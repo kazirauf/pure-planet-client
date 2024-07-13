@@ -1,21 +1,20 @@
-# LeafyCart
-
+# Pure Planet
 ## Introduction
 
 This project is the frontend part of an application, providing users with the ability to browse products, add them to the cart, and proceed to checkout.
 
 ## Project Description
 
-The frontend of this E-commerce application is built to deliver a seamless shopping experience. It includes functionalities such as product listing, search, filtering, cart management, and checkout process. The goal is to provide a user-friendly interface for customers to easily navigate and purchase products.
+Our online nursery website offers a comprehensive platform for purchasing your favorite trees and plants. Users can browse through an extensive product listing, utilize search and filtering options to find specific items, and manage their carts for a streamlined shopping experience. The checkout process is secure and straightforward, incorporating online payments.
 
-## Features
+## Key Features
 
-- Browse a list of products
-- Search for products by name or category
-- Filter products by various criteria
+- Product Listing and Browsing: Easily browse a wide variety of trees and plants with detailed information and images.
+- Search and Filtering: Quickly find specific products using robust search and filtering functionalities.
+- Cart Management: Add products to your cart, review selections, and manage quantities with ease.
 - Add products to the cart
 - View cart details
-- Proceed to checkout
+- Secure Checkout: Enjoy a hassle-free checkout process.
 - Place an order
 
 ## Technology Stack
@@ -24,7 +23,7 @@ The frontend of this E-commerce application is built to deliver a seamless shopp
 - Redux Toolkit
 - React Router
 - Tailwind CSS
-- SweetAlert2
+- Dasy UI
 
 ## Installation Guideline
 
@@ -38,13 +37,13 @@ The frontend of this E-commerce application is built to deliver a seamless shopp
 1. **Clone the repository**
 
    ```sh
-   https://github.com/yasin-arafat-389/LeafyCart-Client
+   https://github.com/kazirauf/pure-planet-client.git
    ```
 
    2. **Navigate to the project directory**
 
    ```sh
-   cd LeafyCart-Client
+   cd pure-planet-client
 
    ```
 
@@ -72,3 +71,4 @@ baseUrl: "http://localhost:5000/api/v1",
 npm run dev
 
 ```
+
