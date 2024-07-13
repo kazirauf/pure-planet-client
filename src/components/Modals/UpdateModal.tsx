@@ -92,8 +92,7 @@ const UpdateModal = ({ open, handleOpen, productToUpdate }: any) => {
                 name="image"
                 defaultValue={formValues.image}
                 onChange={handleChange}
-                placeholder="Enter image URL"
-              />
+                placeholder="Enter image URL" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>
@@ -103,8 +102,7 @@ const UpdateModal = ({ open, handleOpen, productToUpdate }: any) => {
                 name="title"
                 defaultValue={formValues.title}
                 onChange={handleChange}
-                placeholder="Enter product title"
-              />
+                placeholder="Enter product title" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>
@@ -114,8 +112,7 @@ const UpdateModal = ({ open, handleOpen, productToUpdate }: any) => {
                 name="description"
                 defaultValue={formValues.description}
                 onChange={handleChange}
-                placeholder="Enter product description"
-              />
+                placeholder="Enter product description" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              />
             </div>
 
             <div>
@@ -126,8 +123,7 @@ const UpdateModal = ({ open, handleOpen, productToUpdate }: any) => {
                 type="number"
                 defaultValue={formValues.price}
                 onChange={handleChange}
-                placeholder="Enter product price"
-              />
+                placeholder="Enter product price" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>
@@ -156,8 +152,7 @@ const UpdateModal = ({ open, handleOpen, productToUpdate }: any) => {
                 type="number"
                 defaultValue={formValues.quantity}
                 onChange={handleChange}
-                placeholder="Enter product quantity"
-              />
+                placeholder="Enter product quantity" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>

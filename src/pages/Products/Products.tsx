@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import bannerBg from "../../assets/product-page-banner-bg.jpg";
+
 import { Button, Input } from "@material-tailwind/react";
 import { IoSearchSharp } from "react-icons/io5";
 import {

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link } from "react-router-dom";
-import bannerBg from "../../assets/product-page-banner-bg.jpg";
 import { useAppSelector } from "../../redux/hooks";
 
 const Cart = () => {
@@ -29,8 +28,8 @@ const Cart = () => {
             </div>
           ) : (
             <div className="rounded-lg  grid lg:grid-cols-2 gap-20 mr-20 grid-cols-1">
-              {cartItems.map((item, index) => (
-               <div className="card bg-base-100 w-80 shadow-xl">
+              {cartItems.map((item, index:number) => (
+               <div key={index} className="card bg-base-100 w-80 shadow-xl">
                <figure>
                  <img
                    src={item.image}

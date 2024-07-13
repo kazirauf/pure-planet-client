@@ -223,7 +223,7 @@ const Management = () => {
     <tbody className="text-sm divide-y divide-gray-100">
       {data.data.data.length === 0
         ? null
-        : data.data.data.map((item, index) => (
+        : data.data.data.map((item:any, index:number) => (
             <tr key={index}>
               <td className="p-2 whitespace-nowrap">
                 <div className="flex items-center justify-center">

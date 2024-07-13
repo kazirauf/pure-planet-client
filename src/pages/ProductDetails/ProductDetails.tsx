@@ -16,7 +16,7 @@ const ProductDetails = () => {
 
   const { data, isLoading } = useGetSingleProductQuery(id);
 
-  const [checkIfAvailable, { isLoading: isCheckingLoading }] =
+  const [checkIfAvailable, ] =
     useCheckAvailabilityOfProductMutation({});
 
   if (isLoading) {

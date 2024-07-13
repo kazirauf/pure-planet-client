@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Button, Dialog, Input, Textarea, Radio } from "@material-tailwind/react";
+import { Button, Dialog, Input, Textarea } from "@material-tailwind/react";
 import { useState } from "react";
 import { useAddNewProductMutation } from "../../redux/features/product/addNewProduct";
 import { ImSpinner9 } from "react-icons/im";
@@ -97,8 +97,7 @@ const AddProductModal = ({ open, handleOpen }: any) => {
                 name="imageLink"
                 value={formValues.imageLink}
                 onChange={handleChange}
-                placeholder="Enter image URL"
-              />
+                placeholder="Enter image URL" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>
@@ -109,8 +108,7 @@ const AddProductModal = ({ open, handleOpen }: any) => {
                 name="title"
                 value={formValues.title}
                 onChange={handleChange}
-                placeholder="Enter product title"
-              />
+                placeholder="Enter product title" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>
@@ -121,8 +119,7 @@ const AddProductModal = ({ open, handleOpen }: any) => {
                 name="description"
                 value={formValues.description}
                 onChange={handleChange}
-                placeholder="Enter product description"
-              />
+                placeholder="Enter product description" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              />
             </div>
 
             <div>
@@ -134,8 +131,7 @@ const AddProductModal = ({ open, handleOpen }: any) => {
                 name="price"
                 value={formValues.price}
                 onChange={handleChange}
-                placeholder="Enter product price"
-              />
+                placeholder="Enter product price" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>
@@ -165,8 +161,7 @@ const AddProductModal = ({ open, handleOpen }: any) => {
                 name="quantity"
                 value={formValues.quantity}
                 onChange={handleChange}
-                placeholder="Enter product quantity"
-              />
+                placeholder="Enter product quantity" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined}              />
             </div>
 
             <div>

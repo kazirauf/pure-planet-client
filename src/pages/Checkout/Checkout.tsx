@@ -1,5 +1,4 @@
 import { Radio } from "@material-tailwind/react";
-import bannerBg from "../../assets/product-page-banner-bg.jpg";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import Swal from "sweetalert2";
 import { useState } from "react";

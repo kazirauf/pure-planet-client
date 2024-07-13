@@ -1,8 +1,4 @@
-import galleryOne from "../assets/gallery-one.jpg";
-import galleryTwo from "../assets/gallery-two.jpg";
-import galleryThree from "../assets/gallery-three.jpg";
-import galleryFour from "../assets/gallery-four.jpg";
-import galleryFive from "../assets/gallery-five.jpg";
+
 
 const Gallery = () => {
   return (

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link, useParams } from "react-router-dom";
-import bannerBg from "../../assets/product-page-banner-bg.jpg";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
+
 import {
   useCheckAvailabilityOfProductMutation,
   useGetAllProductsByCategoryQuery,
