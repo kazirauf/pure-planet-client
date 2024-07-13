@@ -137,7 +137,7 @@ const Products = () => {
           {allProducts.data.data.map((item: any, index: number) => (
             <div key={index} className="w-full max-w-sm bg-white border3 border-lime-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-              <img className="h-60 rounded-t-lg " src={item.image} alt="product image" />
+              <img className="h-60 rounded-t-lg flex justify-center " src={item.image} alt="product image" />
             </a>
             <div className="px-5 pb-5 mt-4">
               <a href="#">
