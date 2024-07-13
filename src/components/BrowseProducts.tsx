@@ -107,7 +107,7 @@ const BrowseProducts = () => {
               <button
                   disabled={isCheckingLoading && item._id === currentProductId}
                   onClick={() => handleAddToCart(item)}
-                 className="btn bg-gradient-to-r from-lime-800 to-green-800 text-white"
+                className="btn bg-gradient-to-r from-orange-600 to-orange-300 text-white"
                 >
                   {isCheckingLoading && item._id === currentProductId ? (
                     <div className="flex justify-center items-center gap-4">
@@ -118,7 +118,7 @@ const BrowseProducts = () => {
                   )}
                 </button>
                 <Link
-                className="btn bg-gradient-to-r from-lime-800 to-green-800 text-white"
+               className="btn bg-gradient-to-r from-orange-600 to-orange-300 text-white"
                 to={`/product/details/${item._id}`}
               >
                 See details

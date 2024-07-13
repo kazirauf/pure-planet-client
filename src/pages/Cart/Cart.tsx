@@ -14,19 +14,18 @@ const Cart = () => {
   return (
     <div>
       <div
-        className="h-[200px] bg-cover bg-center bg-gray-400 grayscale"
-        style={{ backgroundImage: `url(${bannerBg})` }}
+       
       >
-        <div className="h-full w-full flex items-center justify-center bg-black bg-opacity-50">
-          <h1 className="text-white text-5xl">Cart</h1>
+        <div className="h-full w-full flex items-center justify-center">
+          <h1 className=" text-5xl text-[#75ef71] mt-10">Your Cart List</h1>
         </div>
       </div>
 
       <div className="bg-[#EEEDEB] py-20">
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           {cartItems.length === 0 ? (
-            <div className="text-5xl font-bold py-10">
-              No items found in the cart!!
+            <div className="text-5xl font-bold py-10 text-orange-700">
+              You don't have any cart
             </div>
           ) : (
             <div className="rounded-lg md:w-2/3">

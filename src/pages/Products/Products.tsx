@@ -171,7 +171,7 @@ const Products = () => {
               <button
                   disabled={isCheckingLoading && item._id === currentProductId}
                   onClick={() => handleAddToCart(item)}
-                 className="btn bg-gradient-to-r from-lime-800 to-lime-800 text-white"
+                 className="btn bg-gradient-to-r from-orange-600 to-orange-300 text-white"
                 >
                   {isCheckingLoading && item._id === currentProductId ? (
                     <div className="flex justify-center items-center gap-4">
@@ -182,7 +182,7 @@ const Products = () => {
                   )}
                 </button>
                 <Link
-                className="btn bg-gradient-to-r from-lime-800 to-green-800 text-white"
+                className="btn bg-gradient-to-r from-orange-600 to-orange-300 text-white"
                 to={`/product/details/${item._id}`}
               >
                 See details
@@ -218,6 +218,7 @@ const Products = () => {
           {pages.map((_item, index) => (
             <button
               key={index}
+             
               className={` btn bg-gradient-to-r from-lime-800 to-green-800 text-white px-3 py-1 font-bold text-[12px] md:text-[18px] lg:text-[18px] hover:bg-[#2121211a] rounded-lg ${
                 currentPage === index + 1
                   ? "bg-[#508D4E] text-white rounded-lg hover:!bg-[#1A5319]"

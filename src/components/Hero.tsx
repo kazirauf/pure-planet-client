@@ -16,7 +16,7 @@ const Hero = () => {
       <p className="mb-5">
       Explore our online nursery for a wide variety of trees, adding natural beauty and shade to your garden. 
       </p>
-      <button className="btn bg-gradient-to-r from-lime-800 to-green-800 text-white">Explore All 🌳</button>
+      <button className="btn bg-gradient-to-r from-orange-600 to-orange-300 text-white">Explore All 🌳</button>
     </div>
   </div>
 </div>

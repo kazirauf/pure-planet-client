@@ -99,7 +99,7 @@ const ProductDetails = () => {
           </div>
         </div>
         <div >
-          <button onClick={handleAddToCart} type="button" className="btn bg-gradient-to-r from-lime-800 to-green-800 text-white">
+          <button onClick={handleAddToCart} type="button" className="btn bg-gradient-to-r from-orange-600 to-orange-300 text-white">
             <img className="w-6" src="http://co0kie.github.io/codepen/nike-product-page/cart.png" alt="" />
             <span>add to cart</span>
           </button>
