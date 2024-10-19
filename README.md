@@ -1,4 +1,8 @@
 # Pure Planet
+[Live URL](https://pure-planet-fdda8.web.app/)
+
+Pure Planet Server Side
+[Live URL](https://github.com/kazirauf/pure-planet-server)
 ## Introduction
 
 This project is the frontend part of an application, providing users with the ability to browse products, add them to the cart, and proceed to checkout.
